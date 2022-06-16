@@ -1,16 +1,22 @@
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.ui import WebDriverWait
+
+
 class Page:
 
     def __int__(self, driver):
         self.driver = driver
 
-    def fill_in(self, txt, locator, by_what):
-        self.driver.find_element(by_what, locator).send_keys(txt)
+    def is_enabled(self, by_locator):
+        element = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(by_locator))
+        return bool(element)
 
-    def click_on(self, locator, by_what):
-        self.driver.implicitly_wait(5)
-        self.driver.find_element(by_what, locator).click()
+    def do_click(self, by_locator):
+        WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(by_locator)).click()
 
-    def extract_text(self, locator, by_what):
-        self.driver.implicitly_wait(5)
-        el = self.driver.find_element(by_what, locator)
-        return el.text
+    def do_send_key(self, by_locator, text):
+        WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(by_locator)).send_key(text)
+
+    def get_element_text(self, by_locator):
+        element = WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(by_locator))
+        return element.text
