@@ -1,5 +1,14 @@
 # TestProject
 
+Project name TestTask
+
+Language Python 
+Driver Selenium Webdriver
+Browser Google Chrome
+Test Framework Pytest
+
+Pattern Page Object Model
+
 Запускаю только pytest AutoTests/test_CalcPage.py
 pytest AutoTests/test_SearchPage.py - это заглушка
 
