@@ -5,8 +5,6 @@ from selenium.webdriver.chrome.service import Service
 
 from AutoTests.ParentTest import ParentTest
 from Conf.config import TestData
-from WebPages import SearchPage
-
 
 class TestSearchPage(ParentTest):
     @pytest.fixture(scope="class")
@@ -18,5 +16,5 @@ class TestSearchPage(ParentTest):
         driver.close()
 
     def test_search(self):
-        self.searchPage = SearchPage(self.driver)
-        self.searchPage.do_search(TestData.WORD_CALC)
+        pass
+
