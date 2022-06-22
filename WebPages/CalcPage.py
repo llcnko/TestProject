@@ -1,8 +1,5 @@
-from datetime import time
-
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
-
 from Conf.config import TestData
 from WebPages.Page import Page
 
@@ -19,8 +16,6 @@ class CalcPage(Page):
     def do_search(self, search_string):
         self.do_send_key(self.SEARCH_FIELD, TestData.WORD_CALC)
         self.do_click(self.SEARCH_BUTTON)
-        time.sleep(3)
-
 
     def do_math(self, search_expression):
         self.do_send_key(self.CALC_TEXTBOX, TestData.CALC_EXPRESSION)
