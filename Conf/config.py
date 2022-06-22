@@ -4,3 +4,4 @@ class TestData:
     WORD_CALC = "Калькулятор"
     CALC_EXPRESSION = "1 * 2 - 3 + 1"
     RESULT = "0"
+
